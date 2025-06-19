@@ -7,12 +7,12 @@ import { useForm } from 'react-hook-form'
 import { createTaskSchema, createTaskSchemaType } from '@/schema/createTask'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from './ui/form'
-import { CreateCollectionSchemaType } from '@/schema/createCollection'
+
 import { Textarea } from './ui/textarea'
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
 import { Calendar } from './ui/calendar'
 import { Button } from './ui/button'
-import { Calendar1, CalendarHeartIcon, Loader2Icon } from 'lucide-react'
+import { Calendar1, Loader2Icon } from 'lucide-react'
 import { format } from 'date-fns'
 import { createTaskAction } from '@/actions/createTaskAction'
 import { toast } from 'sonner'
@@ -47,6 +47,7 @@ const CreateTaskDialog = ({ open, setOpen, collection }: Props) => {
 
             form.reset();
         } catch (error) {
+            console.log(error)
             toast.error('Error in task creation')
 
         }

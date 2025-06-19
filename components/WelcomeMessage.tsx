@@ -1,8 +1,8 @@
 'use client'
-import { SignInButton, SignUpButton, useUser } from '@clerk/nextjs';
-import { currentUser } from '@clerk/nextjs/server'
+import { useUser } from '@clerk/nextjs';
+
 import { motion } from 'motion/react';
-import { Button } from './ui/button';
+
 
 const WelcomeMessage = () => {
     const { user } = useUser()
@@ -43,48 +43,6 @@ const WelcomeMessage = () => {
                 </motion.div>
             )
             }
-            {/* <div className='hidden md:visible'>
-                {
-                    !user && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.8 }}
-                            className="space-y-6"
-                        >
-                            <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 }}
-                                className="text-4xl font-bold bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent"
-                            >
-                                Never Forget What Matters
-                            </motion.h1>
-                            <motion.p
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.4 }}
-                                className="text-xl text-muted-foreground max-w-2xl mx-auto"
-                            >
-                                Stay on top of your tasks and reminders with our intuitive platform
-                            </motion.p>
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.6 }}
-                                className="flex gap-4 justify-center"
-                            >
-                                <Button asChild variant="outline" className="px-8">
-                                    <SignUpButton>Get Started</SignUpButton>
-                                </Button>
-                                <Button asChild className="px-8 bg-gradient-to-r from-yellow-500 to-pink-500">
-                                    <SignInButton>Sign In</SignInButton>
-                                </Button>
-                            </motion.div>
-                        </motion.div>
-                    )
-                }
-            </div> */}
 
         </div>
     )

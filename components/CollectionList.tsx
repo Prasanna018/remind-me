@@ -28,7 +28,7 @@ const CollectionList = async () => {
             <div className="flex flex-col items-center justify-center py-3 px-4 text-center">
 
                 <p className="text-gray-500 dark:text-gray-400 max-w-md">
-                    It looks like you don't have any collections yet. Create one to get started!
+                    It looks like you dont have any collections yet. Create one to get started!
                 </p>
                 {/* <button className="mt-6 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
                     Create Collection

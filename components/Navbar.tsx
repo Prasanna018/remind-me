@@ -4,11 +4,11 @@ import Link from 'next/link'
 import React from 'react'
 import { ModeToggle } from './ModeToggle'
 import { Button } from './ui/button'
-import { motion } from 'motion/react'
+import { motion, Variants } from 'motion/react'
 
 const Navbar = () => {
-    // Animation variants defined directly in the component
-    const fadeIn: any = {
+    // Animation variants with proper typing
+    const fadeIn: Variants = {
         hidden: {
             x: 20,
             opacity: 0,
@@ -24,7 +24,7 @@ const Navbar = () => {
         },
     };
 
-    const slideIn: any = {
+    const slideIn: Variants = {
         hidden: {
             y: -80,
             opacity: 0,
@@ -38,6 +38,19 @@ const Navbar = () => {
                 ease: 'easeOut',
             },
         },
+    };
+
+    const navItemsVariants: Variants = {
+        hidden: { x: -20, opacity: 0 },
+        show: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'tween',
+                duration: 0.5,
+                ease: 'easeOut',
+            }
+        }
     };
 
     return (
@@ -58,18 +71,7 @@ const Navbar = () => {
 
             {/* Navigation items */}
             <motion.div
-                variants={{
-                    hidden: { x: -20, opacity: 0 },
-                    show: {
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                            type: 'tween',
-                            duration: 0.5,
-                            ease: 'easeOut',
-                        }
-                    }
-                }}
+                variants={navItemsVariants}
                 className='flex items-center gap-x-2 sm:gap-x-4'
             >
                 <SignedIn>

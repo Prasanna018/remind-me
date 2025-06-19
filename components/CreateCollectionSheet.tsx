@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { CollectionColor, CollectionColorType } from '@/lib/constant/collectionColors'
 import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
-import { Separator } from './ui/separator'
+
 import { CreateCollectionAction } from '@/actions/collectionAction'
 import { toast } from 'sonner'
 import { Loader2Icon } from 'lucide-react'
@@ -45,16 +45,11 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
             form.reset();
 
         } catch (error) {
+            console.log(error)
             toast.error('Failed to create collection');
         }
     }
 
-    const handleOpenChange = (open: boolean) => {
-
-        form.reset();
-
-        onOpenChange(open);
-    }
 
     const handleOpenWrapper = (open: boolean) => {
 

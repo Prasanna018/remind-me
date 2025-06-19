@@ -45,6 +45,7 @@ const CollectionCard = ({ collection }: Props) => {
             toast.success('Collection deleted')
             router.refresh()
         } catch (error) {
+            console.log(error)
             toast.error("Can't delete the Collection")
 
         }
@@ -113,7 +114,7 @@ const CollectionCard = ({ collection }: Props) => {
                                     <AlertDialogContent>
                                         <AlertDialogTitle>Delete Collection</AlertDialogTitle>
                                         <AlertDialogDescription>
-                                            Are you sure you want to delete "{collection.name}"? This action cannot be undone.
+                                            Are you sure you want to delete {collection.name}? This action cannot be undone.
                                         </AlertDialogDescription>
                                         <AlertDialogFooter>
                                             <AlertDialogCancel>Cancel</AlertDialogCancel>
